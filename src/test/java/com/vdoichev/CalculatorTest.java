@@ -97,6 +97,14 @@ class CalculatorTest {
         }
 
         @Test
+        @DisplayName("Множення/ділення/віднімання/додавання відємних чисел 10*-2/-5--2+-8")
+        void multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers() {
+            String expression = "10*-2/-5--2+-8";
+            double result = calculator.calculate(expression);
+            assertEquals(-2, result, "10*-2/-5--2+-8 should be equal 10!");
+        }
+
+        @Test
         @DisplayName("Додавання двохї чисел з плаваючою крапкою 2.5+3.6")
         void additionTwoDouble() {
             String expression = "2.5+3.6";

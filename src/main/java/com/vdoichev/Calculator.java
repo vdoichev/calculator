@@ -4,8 +4,11 @@ import java.util.Arrays;
 
 public class Calculator {
 
+    public static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
+    public static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
+
     public double calculate(String expression) {
-        String[] numbersArray = correctNumbersArray(extractNumbers(expression));
+        String[] numbersArray = extractNumbers(expression);
         String[] operatorsArray = extractOperators(expression);
         double result = 0;
         for (int i = 0; i < numbersArray.length; i++) {
@@ -32,13 +35,22 @@ public class Calculator {
                 return currentResult * Double.parseDouble(number);
             case "/":
                 return currentResult / Double.parseDouble(number);
+//          Два оператори у елементі масиву операторів
+            case "+-":
+                return currentResult + Double.parseDouble("-" + number);
+            case "--":
+                return currentResult - Double.parseDouble("-" + number);
+            case "*-":
+                return currentResult * Double.parseDouble("-" + number);
+            case "/-":
+                return currentResult / Double.parseDouble("-" + number);
+            default:
+                return currentResult;
         }
-        return currentResult;
     }
 
     private String[] extractNumbers(String expression) {
-        String regex = "[^\\d.]+";
-        return expression.split(regex);
+        return correctNumbersArray(expression.split(REGEX_FOR_NUMBERS));
     }
 
     public int getCountNumbers(String expression) {
@@ -47,8 +59,7 @@ public class Calculator {
     }
 
     private static String[] extractOperators(String expression) {
-        String regex = "[^-+/*]+";
-        return expression.split(regex);
+        return expression.split(REGEX_FOR_OPERATORS);
     }
 
     public int getCountOperators(String expression) {

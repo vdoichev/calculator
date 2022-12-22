@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add methods correctNumbersArray">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +50,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last.edited.regexp": "Sample Text",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,7 +70,7 @@
       <recent name="com.vdoichev" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in calculator">
+  <component name="RunManager" selected="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
       <module name="my-calculator" />
@@ -105,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -115,7 +118,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="firstSubtractionAndEditionNumbers" />
+      <option name="METHOD_NAME" value="multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in calculator" />
         <item itemvalue="JUnit.All in calculator" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671564352083</updated>
-      <workItem from="1671564353266" duration="36637000" />
+      <workItem from="1671564353266" duration="38413000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -176,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671668469215</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Rename module">
+      <created>1671668699985</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671668699985</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change pom.xml">
+      <created>1671668768930</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671668768930</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,14 +202,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add methods extractOperators and operate" />
     <MESSAGE value="Add methods correctNumbersArray" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add methods correctNumbersArray" />
+    <MESSAGE value="Rename module" />
+    <MESSAGE value="Change pom.xml" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java</url>
-          <line>14</line>
+          <line>16</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
