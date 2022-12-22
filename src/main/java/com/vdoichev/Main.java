@@ -11,7 +11,7 @@ public class Main {
         double result = calculator.calculate(expression);
         System.out.println("Result: " + result +
                 ", count numbers in expression: " +
-                calculator.getCountNumbers(expression));
+                calculator.getCountNumbers());
     }
 
 }

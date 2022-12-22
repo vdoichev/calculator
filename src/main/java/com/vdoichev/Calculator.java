@@ -4,12 +4,32 @@ import java.util.Arrays;
 
 public class Calculator {
 
-    public static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
-    public static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
+    private static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
+    private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
+    private int countNumbers = 0;
+    private int countOperators = 0;
+
+    public int getCountNumbers() {
+        return countNumbers;
+    }
+
+    public void setCountNumbers(int countNumbers) {
+        this.countNumbers = countNumbers;
+    }
+
+    public int getCountOperators() {
+        return countOperators;
+    }
+
+    public void setCountOperators(int countOperators) {
+        this.countOperators = countOperators;
+    }
 
     public double calculate(String expression) {
         String[] numbersArray = extractNumbers(expression);
+        setCountNumbers(numbersArray.length);
         String[] operatorsArray = extractOperators(expression);
+        setCountOperators(operatorsArray.length);
         double result = 0;
         for (int i = 0; i < numbersArray.length; i++) {
             result = operate(operatorsArray[i], result, numbersArray[i]);
@@ -53,17 +73,8 @@ public class Calculator {
         return correctNumbersArray(expression.split(REGEX_FOR_NUMBERS));
     }
 
-    public int getCountNumbers(String expression) {
-        String[] result = extractNumbers(expression);
-        return result.length;
-    }
-
     private static String[] extractOperators(String expression) {
         return expression.split(REGEX_FOR_OPERATORS);
     }
 
-    public int getCountOperators(String expression) {
-        String[] result = extractOperators(expression);
-        return result.length;
-    }
 }

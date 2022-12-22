@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Refactoring">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Fix branch with Arrays">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
@@ -42,23 +42,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last.edited.regexp": "Sample Text",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last.edited.regexp&quot;: &quot;Sample Text&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -70,7 +70,7 @@
       <recent name="com.vdoichev" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers">
+  <component name="RunManager" selected="JUnit.java in calculator">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
       <module name="my-calculator" />
@@ -84,15 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="my-calculator" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +94,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="firstEditionAndSubtractNumbers" />
+      <option name="METHOD_NAME" value="editionThreeDecimalNumbersWithSpace" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,6 +116,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vdoichev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
+      <option name="METHOD_NAME" value="subtractionAndEditionMultiplicationAndDivisionNumbers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <option name="TEST_OBJECT" value="directory" />
@@ -132,26 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="my-calculator" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="my-calculator" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.java in calculator" />
-        <item itemvalue="JUnit.All in calculator" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +158,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671564352083</updated>
-      <workItem from="1671564353266" duration="38413000" />
+      <workItem from="1671564353266" duration="38602000" />
+      <workItem from="1671693449421" duration="3230000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -193,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671668768930</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add two operators in method operate">
+      <created>1671670578202</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671670578202</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +208,9 @@
     <MESSAGE value="Rename module" />
     <MESSAGE value="Change pom.xml" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Add two operators in method operate" />
+    <MESSAGE value="Fix branch with Arrays" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix branch with Arrays" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -214,6 +219,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java</url>
           <line>16</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

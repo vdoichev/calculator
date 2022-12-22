@@ -111,6 +111,14 @@ class CalculatorTest {
             double result = calculator.calculate(expression);
             assertEquals(6.1, result, "2.5+3.6 should be equal 6.1!");
         }
+
+//        @Test
+//        @DisplayName("Віднімання/додавання/множення/ділення чисел 30-5*2+3/1")
+//        void subtractionAndEditionMultiplicationAndDivisionNumbers() {
+//            String expression = "-30-5*2+3/1";
+//            double result = calculator.calculate(expression);
+//            assertEquals(23, result, "30-5*2+3/1 should be equal 23!");
+//        }
     }
 
     @Nested
@@ -120,7 +128,8 @@ class CalculatorTest {
         @DisplayName("Дві цифри у виразі 1+2")
         void countTwoNumbersInExpression() {
             String expression = "1+2";
-            double result = calculator.getCountNumbers(expression);
+            calculator.calculate(expression);
+            double result = calculator.getCountNumbers();
             assertEquals(2, result, "Expression 1+2 should be contain 2 numbers!");
         }
 
@@ -128,7 +137,8 @@ class CalculatorTest {
         @DisplayName("Три цифри у виразі 1+2+3")
         void countThreeNumbersInExpression() {
             String expression = "1+2+3";
-            double result = calculator.getCountNumbers(expression);
+            calculator.calculate(expression);
+            double result = calculator.getCountNumbers();
             assertEquals(3, result, "Expression 1+2+3 should be contain 3 numbers!");
         }
 
@@ -136,7 +146,8 @@ class CalculatorTest {
         @DisplayName("Один оператор '+' у виразі 1+2")
         void countOneOperatorInExpression() {
             String expression = "1+2";
-            int result = calculator.getCountOperators(expression);
+            calculator.calculate(expression);
+            int result = calculator.getCountOperators();
             assertEquals(2, result, "Expression 1+2 should be contain 2 operator!");
         }
 
@@ -144,7 +155,8 @@ class CalculatorTest {
         @DisplayName("Декілька різних операторів у виразі -1+2*4/2")
         void countManyOperatorsInExpression() {
             String expression = "-1+2*4/2";
-            int result = calculator.getCountOperators(expression);
+            calculator.calculate(expression);
+            int result = calculator.getCountOperators();
             assertEquals(4, result, "Expression -1+2*4/2 should be contain 4 operator!");
         }
     }
