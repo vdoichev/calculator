@@ -112,13 +112,13 @@ class CalculatorTest {
             assertEquals(6.1, result, "2.5+3.6 should be equal 6.1!");
         }
 
-//        @Test
-//        @DisplayName("Віднімання/додавання/множення/ділення чисел 30-5*2+3/1")
-//        void subtractionAndEditionMultiplicationAndDivisionNumbers() {
-//            String expression = "-30-5*2+3/1";
-//            double result = calculator.calculate(expression);
-//            assertEquals(23, result, "30-5*2+3/1 should be equal 23!");
-//        }
+        @Test
+        @DisplayName("Віднімання/додавання/множення/ділення чисел 30-5*2+3/1")
+        void subtractionAndEditionMultiplicationAndDivisionNumbers() {
+            String expression = "-30-5*2+3/1";
+            double result = calculator.calculate(expression);
+            assertEquals(23, result, "30-5*2+3/1 should be equal 23!");
+        }
     }
 
     @Nested

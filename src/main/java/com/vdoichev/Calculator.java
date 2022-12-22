@@ -1,6 +1,8 @@
 package com.vdoichev;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Calculator {
 
@@ -8,6 +10,8 @@ public class Calculator {
     private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
     private int countNumbers = 0;
     private int countOperators = 0;
+    private List<String> numbersList;
+    private List<String> operatorsList;
 
     public int getCountNumbers() {
         return countNumbers;
@@ -26,22 +30,27 @@ public class Calculator {
     }
 
     public double calculate(String expression) {
-        String[] numbersArray = extractNumbers(expression);
-        setCountNumbers(numbersArray.length);
-        String[] operatorsArray = extractOperators(expression);
-        setCountOperators(operatorsArray.length);
+        transformExpressionToLists(expression);
+
         double result = 0;
-        for (int i = 0; i < numbersArray.length; i++) {
-            result = operate(operatorsArray[i], result, numbersArray[i]);
+        for (int i = 0; i < numbersList.size(); i++) {
+            result = operate(operatorsList.get(i), result, numbersList.get(i));
         }
+
         return result;
     }
 
-    private String[] correctNumbersArray(String[] extractNumbers) {
-        String[] result = Arrays.stream(extractNumbers)
+    private void transformExpressionToLists(String expression){
+        numbersList = extractNumbers(expression);
+        setCountNumbers(numbersList.size());
+        operatorsList = extractOperators(expression);
+        setCountOperators(operatorsList.size());
+    }
+
+    private List<String> correctNumbersArray(String[] extractNumbers) {
+        return Arrays.stream(extractNumbers)
                 .filter(x -> x.length() > 0)
-                .toArray(String[]::new);
-        return result;
+                .collect(Collectors.toList());
     }
 
     private double operate(String operator, double currentResult, String number) {
@@ -69,12 +78,12 @@ public class Calculator {
         }
     }
 
-    private String[] extractNumbers(String expression) {
+    private List<String> extractNumbers(String expression) {
         return correctNumbersArray(expression.split(REGEX_FOR_NUMBERS));
     }
 
-    private static String[] extractOperators(String expression) {
-        return expression.split(REGEX_FOR_OPERATORS);
+    private static List<String> extractOperators(String expression) {
+        return Arrays.asList(expression.split(REGEX_FOR_OPERATORS));
     }
 
 }
