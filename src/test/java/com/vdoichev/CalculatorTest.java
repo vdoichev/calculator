@@ -13,9 +13,10 @@ class CalculatorTest {
     }
 
     @Nested
+
     @DisplayName("Тестування методу calculate")
     class calculateNested {
-        @Test
+        @Test()
         @DisplayName("Додавання двох цифр 2+3")
         void editionTwoNumbers() {
             String expression = "2+3";
@@ -61,6 +62,46 @@ class CalculatorTest {
             String expression = "3-2";
             double result = calculator.calculate(expression);
             assertEquals(1, result, "3-2 should be equal 1!");
+        }
+
+        @Test
+        @DisplayName("Віднімання та додавання чисел 24-12+32")
+        void subtractionAndEditionNumbers() {
+            String expression = "24-12+32";
+            double result = calculator.calculate(expression);
+            assertEquals(44, result, "24-12+32 should be equal 44!");
+        }
+
+        @Test
+        @DisplayName("Відємне число на початку при додаванні -12+32")
+        void firstSubtractionAndEditionNumbers() {
+            String expression = "-12+32";
+            double result = calculator.calculate(expression);
+            assertEquals(20, result, "-12+32 should be equal 20!");
+        }
+
+        @Test
+        @DisplayName("Додатне число на початку при відніманні +56-32")
+        void firstEditionAndSubtractNumbers() {
+            String expression = "+56-32";
+            double result = calculator.calculate(expression);
+            assertEquals(24, result, "+56-32 should be equal 24!");
+        }
+
+        @Test
+        @DisplayName("Множення/ділення/віднімання/додавання чисел 10*2/5-2+8")
+        void multiplicationAndDivisionAndSubtractionAndEditionNumbers() {
+            String expression = "10*2/5-2+8";
+            double result = calculator.calculate(expression);
+            assertEquals(10, result, "10*2/5-2+8 should be equal 10!");
+        }
+
+        @Test
+        @DisplayName("Додавання двохї чисел з плаваючою крапкою 2.5+3.6")
+        void additionTwoDouble() {
+            String expression = "2.5+3.6";
+            double result = calculator.calculate(expression);
+            assertEquals(6.1, result, "2.5+3.6 should be equal 6.1!");
         }
     }
 

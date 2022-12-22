@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +54,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -78,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.additionTwoDouble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculator" />
       <extension name="coverage">
         <pattern>
@@ -88,13 +88,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="editionThreeDecimalNumbersWithSpace" />
+      <option name="METHOD_NAME" value="additionTwoDouble" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$calculateNested.subtractionTwoNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculator" />
       <extension name="coverage">
         <pattern>
@@ -104,13 +104,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="subtractionTwoNumbers" />
+      <option name="METHOD_NAME" value="firstEditionAndSubtractNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$extractNumbersNested.countManyOperatorsInExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculator" />
       <extension name="coverage">
         <pattern>
@@ -119,25 +119,17 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$extractNumbersNested" />
-      <option name="METHOD_NAME" value="countManyOperatorsInExpression" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
+      <option name="METHOD_NAME" value="firstSubtractionAndEditionNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$extractNumbersNested.countOneOperatorInExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="calculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vdoichev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$extractNumbersNested" />
-      <option name="METHOD_NAME" value="countOneOperatorInExpression" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,10 +137,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in calculator" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" />
-        <item itemvalue="JUnit.CalculatorTest$extractNumbersNested.countManyOperatorsInExpression" />
-        <item itemvalue="JUnit.CalculatorTest$extractNumbersNested.countOneOperatorInExpression" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionTwoNumbers" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
+        <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.additionTwoDouble" />
       </list>
     </recent_temporary>
   </component>
@@ -160,8 +152,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671564352083</updated>
-      <workItem from="1671564353266" duration="13552000" />
+      <workItem from="1671564353266" duration="36342000" />
     </task>
+    <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
+      <created>1671607555503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671607555503</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,17 +179,11 @@
           <line>14</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671668042540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/calculator$All_in_calculator.ic" NAME="All in calculator Coverage Results" MODIFIED="1671608168528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

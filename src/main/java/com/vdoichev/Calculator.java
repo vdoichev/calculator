@@ -1,15 +1,23 @@
 package com.vdoichev;
 
+import java.util.Arrays;
+
 public class Calculator {
 
     public double calculate(String expression) {
-        String[] numbersArray = extractNumbers(expression);
+        String[] numbersArray = correctNumbersArray(extractNumbers(expression));
         String[] operatorsArray = extractOperators(expression);
         double result = 0;
         for (int i = 0; i < numbersArray.length; i++) {
             result = operate(operatorsArray[i], result, numbersArray[i]);
         }
+        return result;
+    }
 
+    private String[] correctNumbersArray(String[] extractNumbers) {
+        String[] result = Arrays.stream(extractNumbers)
+                .filter(x -> x.length() > 0)
+                .toArray(String[]::new);
         return result;
     }
 
@@ -20,12 +28,16 @@ public class Calculator {
                 return currentResult + Double.parseDouble(number);
             case "-":
                 return currentResult - Double.parseDouble(number);
+            case "*":
+                return currentResult * Double.parseDouble(number);
+            case "/":
+                return currentResult / Double.parseDouble(number);
         }
         return currentResult;
     }
 
     private String[] extractNumbers(String expression) {
-        String regex = "[^\\d]+";
+        String regex = "[^\\d.]+";
         return expression.split(regex);
     }
 
