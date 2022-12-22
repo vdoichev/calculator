@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add methods extractOperators and operate">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add methods correctNumbersArray">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,33 +67,30 @@
       <recent name="com.vdoichev" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in calculator">
-    <configuration name="All in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculator" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest$calculateNested.additionTwoDouble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculator" />
+  <component name="RunManager" selected="JUnit.java in calculator">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
+      <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.vdoichev.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="additionTwoDouble" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculator" />
+      <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.vdoichev.*" />
@@ -111,7 +106,7 @@
       </method>
     </configuration>
     <configuration name="CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculator" />
+      <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.vdoichev.*" />
@@ -127,20 +122,33 @@
       </method>
     </configuration>
     <configuration name="java in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="calculator" />
+      <module name="my-calculator" />
       <option name="TEST_OBJECT" value="directory" />
       <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="my-calculator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="my-calculator" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in calculator" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
-        <item itemvalue="JUnit.java in calculator" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.firstSubtractionAndEditionNumbers" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.additionTwoDouble" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671564352083</updated>
-      <workItem from="1671564353266" duration="36342000" />
+      <workItem from="1671564353266" duration="36637000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -161,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671607555503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add methods correctNumbersArray">
+      <created>1671668469215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671668469215</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +184,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add methods extractOperators and operate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add methods extractOperators and operate" />
+    <MESSAGE value="Add methods correctNumbersArray" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add methods correctNumbersArray" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
