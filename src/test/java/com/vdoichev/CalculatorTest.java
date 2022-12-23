@@ -2,7 +2,7 @@ package com.vdoichev;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Тестування класу Calculator")
 class CalculatorTest {
@@ -158,6 +158,30 @@ class CalculatorTest {
             calculator.calculate(expression);
             int result = calculator.getCountOperators();
             assertEquals(4, result, "Expression -1+2*4/2 should be contain 4 operator!");
+        }
+    }
+    @Nested
+    @DisplayName("Тестування валідації виразу")
+    class validateNumbersAndValidate {
+        @Test
+        @DisplayName("Відсутність зайвих символів у виразі -1*6/3+8-5")
+        void expressionNotContainLetters() {
+            String expression = "-1 *6/3+ 8-5";
+            assertTrue(calculator.validate(expression), "Expression -1*6/3+8-5 not contain letters or other symbols!");
+        }
+
+        @Test
+        @DisplayName("Наявність літери у виразі 1+A-5")
+        void expressionContainLetters() {
+            String expression = "1+A-5";
+            assertFalse(calculator.validate(expression), "Expression 1+A-5 contain letters!");
+        }
+
+        @Test
+        @DisplayName("Наявність коми у виразі 1+2,3-5")
+        void expressionContainSymbols() {
+            String expression = "1+2,3-5";
+            assertFalse(calculator.validate(expression), "Expression 1+2,3-5 contain other symbols!");
         }
     }
 }

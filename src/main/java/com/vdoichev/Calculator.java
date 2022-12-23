@@ -3,9 +3,12 @@ package com.vdoichev;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Calculator {
+    private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s]";
     private static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
     private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
     private List<String> operatorsList;
@@ -29,22 +32,8 @@ public class Calculator {
         this.countOperators = countOperators;
     }
 
-    private boolean isNotSingleArgument(){
+    private boolean isNotSingleArgument() {
         return numbersList.size() > 1;
-    }
-
-    public double calculate(String expression) {
-        transformExpressionToLists(expression);
-        if (numbersList.size() > 0) {
-            while (isNotSingleArgument()) {
-                int i = getIndexByPriority(operatorsList);
-                double result = operate(operatorsList.get(i), numbersList.get(i - 1), numbersList.get(i));
-                numbersList.set(i - 1, result);
-                numbersList.remove(i);
-                operatorsList.remove(i);
-            }
-        }
-        return numbersList.get(0);
     }
 
     /**
@@ -52,6 +41,25 @@ public class Calculator {
      * методи відповідальні за разразхунок
      * **************************************************
      */
+
+    public double calculate(String expression) {
+        if (validate(expression)) {
+            transformExpressionToLists(expression);
+            if (numbersList.size() > 0) {
+                while (isNotSingleArgument()) {
+                    int i = getIndexByPriority(operatorsList);
+                    double result = operate(operatorsList.get(i), numbersList.get(i - 1), numbersList.get(i));
+                    numbersList.set(i - 1, result);
+                    numbersList.remove(i);
+                    operatorsList.remove(i);
+                }
+            }
+            return numbersList.get(0);
+        } else {
+            System.out.println("Вираз містить заборонені символи!");
+            return 0;
+        }
+    }
 
     public int getIndexByPriority(List<String> operatorsList) {
         for (int i = 1; i < operatorsList.size(); i++) {
@@ -87,7 +95,7 @@ public class Calculator {
 
     /**
      * ***********************************************************
-     * методи відповідальні за перетворення виразу у масиви
+     * методи відповідальні за перетворення виразу у листи
      * ***********************************************************
      **/
     private void transformExpressionToLists(String expression) {
@@ -105,7 +113,7 @@ public class Calculator {
             if (length == 2 && operatorsList.get(i).charAt(1) == '-') {
                 replaceToNegativeNumber(numbersStringList, i, length);
             }
-            if (length == 1 && i==0 && operatorsList.get(i).charAt(0) == '-') {
+            if (length == 1 && i == 0 && operatorsList.get(i).charAt(0) == '-') {
                 replaceToNegativeNumber(numbersStringList, i, length);
             }
             doubleList.add(Double.parseDouble(numbersStringList.get(i)));
@@ -135,4 +143,15 @@ public class Calculator {
         return new ArrayList<>(Arrays.asList(expression.split(REGEX_FOR_OPERATORS)));
     }
 
+    /**
+     * ***********************************************************
+     * методи відповідальні за валідацію виразу
+     * ***********************************************************
+     **/
+
+    public boolean validate(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_FOR_VALIDATE);
+        Matcher matcher = pattern.matcher(expression);
+        return !matcher.find();
+    }
 }
