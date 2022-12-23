@@ -8,9 +8,11 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Calculator {
-    private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s]";
+    private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s()]";
     private static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
     private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
+    public static final String REGEX_WITH_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
+    public static final String REGEX_IN_BRACKETS = "[\\d+/*-.\\s]*";
     private List<String> operatorsList;
     private int countOperators = 0;
     private List<Double> numbersList;
@@ -43,7 +45,7 @@ public class Calculator {
      */
 
     public double calculate(String expression) {
-        if (validate(expression)) {
+        if (validateExpression(expression)) {
             transformExpressionToLists(expression);
             if (numbersList.size() > 0) {
                 while (isNotSingleArgument()) {
@@ -149,9 +151,19 @@ public class Calculator {
      * ***********************************************************
      **/
 
-    public boolean validate(String expression) {
+    public boolean validateExpression(String expression) {
         Pattern pattern = Pattern.compile(REGEX_FOR_VALIDATE);
         Matcher matcher = pattern.matcher(expression);
-        return !matcher.find();
+        return !matcher.find() && validateBrackets(expression);
+    }
+
+    private static boolean validateBrackets(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_WITH_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        do {
+            expression = matcher.replaceAll("");
+            matcher = pattern.matcher(expression);
+        } while (matcher.find());
+        return expression.matches(REGEX_IN_BRACKETS);
     }
 }

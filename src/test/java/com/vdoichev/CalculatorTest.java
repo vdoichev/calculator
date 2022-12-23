@@ -167,21 +167,69 @@ class CalculatorTest {
         @DisplayName("Відсутність зайвих символів у виразі -1*6/3+8-5")
         void expressionNotContainLetters() {
             String expression = "-1 *6/3+ 8-5";
-            assertTrue(calculator.validate(expression), "Expression -1*6/3+8-5 not contain letters or other symbols!");
+            assertTrue(calculator.validateExpression(expression), "Expression -1*6/3+8-5 not contain letters or other symbols!");
         }
 
         @Test
         @DisplayName("Наявність літери у виразі 1+A-5")
         void expressionContainLetters() {
             String expression = "1+A-5";
-            assertFalse(calculator.validate(expression), "Expression 1+A-5 contain letters!");
+            assertFalse(calculator.validateExpression(expression), "Expression 1+A-5 contain letters!");
         }
 
         @Test
         @DisplayName("Наявність коми у виразі 1+2,3-5")
         void expressionContainSymbols() {
             String expression = "1+2,3-5";
-            assertFalse(calculator.validate(expression), "Expression 1+2,3-5 contain other symbols!");
+            assertFalse(calculator.validateExpression(expression), "Expression 1+2,3-5 contain other symbols!");
         }
+
+        @Test
+        @DisplayName("Наявність скобок у виразі (2+3)")
+        void expressionContainBrackets() {
+            String expression = "(2+3)";
+            assertTrue(calculator.validateExpression(expression), "Expression (2+3)  should be contain brackets!");
+        }
+
+        @Test
+        @DisplayName("Наявність скобок у виразі (2+3)+(5-3)")
+        void expressionContainTwoBrackets() {
+            String expression = "(2+3)+(5-3)";
+            assertTrue(calculator.validateExpression(expression), "Expression (2+3)+(5-3)  should be contain brackets!");
+        }
+
+        @Test
+        @DisplayName("Наявність вкладених скобок у виразі 2+(3-2*(5-2))")
+        void expressionContainInnerBrackets() {
+            String expression = "2+( 3-2* ( 5-2 ) )";
+            assertTrue(calculator.validateExpression(expression), "Expression 2+(3-2*(5-2))  should be contain brackets!");
+        }
+
+        @Test
+        @DisplayName("Наявність вкладених скобок у виразі 2+(3-2*(5-2))")
+        void expressionContainIncorrectInnerBrackets() {
+            String expression = "2+(3-2*)5-2))";
+            assertFalse(calculator.validateExpression(expression), "Expression 2+(3-2*(5-2))  contain incorrect brackets!");
+        }
+    }
+
+    @Nested
+    @DisplayName("Тестування виразів зі скобками")
+    class expressionWithBrackets {
+        @Test
+        @DisplayName("Додавання двох цифр (2+3)")
+        void editionTwoNumbersWithBrackets() {
+            String expression = "(2+3)";
+            double result = calculator.calculate(expression);
+            assertEquals(5, result, "Expression (2+3) should be equal 5!");
+        }
+
+//        @Test
+//        @DisplayName("Вираз з двома блоками в дужках (2+3)-(5-2)")
+//        void expressionWithTwoBrackets() {
+//            String expression = "(2+3)-(5-2)";
+//            double result = calculator.calculate(expression);
+//            assertEquals(2, result, "Expression (2+3)-(5-2) should be equal 2!");
+//        }
     }
 }

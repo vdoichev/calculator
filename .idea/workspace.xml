@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="add Test subtractionAndEditionMultiplicationAndDivisionNumbers">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="add method for validation expression">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
@@ -75,7 +75,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in calculator">
-    <configuration name="CalculatorTest$validateNumbersAndValidate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$expressionWithBrackets.expressionWithTwoBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -84,29 +84,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionContainLetters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="my-calculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vdoichev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
-      <option name="METHOD_NAME" value="expressionContainLetters" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$expressionWithBrackets" />
+      <option name="METHOD_NAME" value="expressionWithTwoBrackets" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionContainSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionContainIncorrectInnerBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +101,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
-      <option name="METHOD_NAME" value="expressionContainSymbols" />
+      <option name="METHOD_NAME" value="expressionContainIncorrectInnerBrackets" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionNotContainLetters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionContainInnerBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +117,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
-      <option name="METHOD_NAME" value="expressionNotContainLetters" />
+      <option name="METHOD_NAME" value="expressionContainInnerBrackets" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest$validateNumbersAndValidate.expressionContainTwoBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vdoichev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
+      <option name="METHOD_NAME" value="expressionContainTwoBrackets" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in calculator" />
-        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionContainSymbols" />
-        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionNotContainLetters" />
-        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate" />
-        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionContainLetters" />
+        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionContainInnerBrackets" />
+        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionContainIncorrectInnerBrackets" />
+        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.expressionContainTwoBrackets" />
+        <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.expressionWithTwoBrackets" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671781131331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add method for validation expression">
+      <created>1671785120642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671785120642</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +248,8 @@
     <MESSAGE value="replace arrays to lists" />
     <MESSAGE value="checked the execution of all tests" />
     <MESSAGE value="add Test subtractionAndEditionMultiplicationAndDivisionNumbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Test subtractionAndEditionMultiplicationAndDivisionNumbers" />
+    <MESSAGE value="add method for validation expression" />
+    <option name="LAST_COMMIT_MESSAGE" value="add method for validation expression" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +283,21 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
           <line>89</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>203</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
