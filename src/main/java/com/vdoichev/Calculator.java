@@ -1,8 +1,6 @@
 package com.vdoichev;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -49,22 +47,70 @@ public class Calculator {
 
     public double calculate(String expression) {
         if (validateExpression(expression)) {
-
-            transformExpressionToLists(expression);
-            if (numbersList.size() > 0) {
-                while (isNotSingleArgument()) {
-                    int i = getIndexByPriority(operatorsList);
-                    double result = operate(operatorsList.get(i), numbersList.get(i - 1), numbersList.get(i));
-                    numbersList.set(i - 1, result);
-                    numbersList.remove(i);
-                    operatorsList.remove(i);
-                }
+            if (expression.indexOf('(')!=-1) {
+                return calculateWithBrackets(expression);
+            } else {
+                return calculateWithoutBrackets(expression);
             }
-            return numbersList.get(0);
         } else {
             System.out.println("Вираз містить заборонені символи!");
             return 0;
         }
+    }
+
+    private double calculateWithBrackets(String expression) {
+        Map<String, Double> expressionMap = getMapFromExpression(expression);
+        calculateExpressionMap(expressionMap);
+
+        if (expressionMap.size()>1) {
+            expression = getExpressionFromMap(expression, expressionMap);
+            return calculateWithoutBrackets(expression);
+        }else{
+            return expressionMap.values().stream().mapToDouble(Double::doubleValue).sum();
+        }
+    }
+
+    private static String getExpressionFromMap(String expression, Map<String, Double> expressionMap) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        while (matcher.find()){
+            String expressionKey = matcher.group();
+            Double expressionValue = expressionMap.get(expressionKey);
+            expression = matcher.replaceFirst(expressionValue.toString());
+            matcher = pattern.matcher(expression);
+        }
+        return expression;
+    }
+
+    private void calculateExpressionMap(Map<String, Double> expressionMap) {
+        for (Map.Entry<String,Double> localExpressionMap: expressionMap.entrySet()) {
+            String localExpression = localExpressionMap.getKey();
+            localExpressionMap.setValue(calculateWithoutBrackets(localExpression));
+        }
+    }
+
+    private static Map<String, Double> getMapFromExpression(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        Map<String, Double> expressionMap = new HashMap<>();
+        while (matcher.find()){
+            expressionMap.put(matcher.group(), (double) 0);
+        }
+        return expressionMap;
+    }
+
+    private Double calculateWithoutBrackets(String expression) {
+        transformExpressionToLists(expression);
+        if (numbersList.size() > 0) {
+            while (isNotSingleArgument()) {
+                int i = getIndexByPriority(operatorsList);
+                double result = operate(operatorsList.get(i), numbersList.get(i - 1), numbersList.get(i));
+                numbersList.set(i - 1, result);
+                numbersList.remove(i);
+                operatorsList.remove(i);
+            }
+        }
+        return numbersList.get(0);
     }
 
     public int getIndexByPriority(List<String> operatorsList) {

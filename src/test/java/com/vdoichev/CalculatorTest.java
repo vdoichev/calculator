@@ -238,12 +238,12 @@ class CalculatorTest {
             assertEquals(5, result, "Expression (2+3) should be equal 5!");
         }
 
-//        @Test
-//        @DisplayName("Вираз з двома блоками в дужках (2+3)-(5-2)")
-//        void expressionWithTwoBrackets() {
-//            String expression = "(2+3)-(5-2)";
-//            double result = calculator.calculate(expression);
-//            assertEquals(2, result, "Expression (2+3)-(5-2) should be equal 2!");
-//        }
+        @Test
+        @DisplayName("Вираз з двома блоками в дужках (2+3)-(5-2)")
+        void expressionWithTwoBrackets() {
+            String expression = "(2+3)-(5-2)";
+            double result = calculator.calculate(expression);
+            assertEquals(2, result, "Expression (2+3)-(5-2) should be equal 2!");
+        }
     }
 }
