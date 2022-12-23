@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="checked the execution of all tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,22 +74,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in calculator">
-    <configuration name="CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="my-calculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vdoichev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="editionThreeDecimalNumbersWithSpace" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
@@ -123,6 +106,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vdoichev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
+      <option name="METHOD_NAME" value="subtractionAndEditionMultiplicationAndDivisionNumbers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculatorTest$calculateNested.subtractionAndEditionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
@@ -150,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionAndEditionNumbers" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" />
       </list>
     </recent_temporary>
   </component>
