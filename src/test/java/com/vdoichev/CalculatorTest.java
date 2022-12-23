@@ -211,6 +211,20 @@ class CalculatorTest {
             String expression = "2+(3-2*)5-2))";
             assertFalse(calculator.validateExpression(expression), "Expression 2+(3-2*(5-2))  contain incorrect brackets!");
         }
+
+        @Test
+        @DisplayName("Наявність значної кількості арифметичних виразів 2++-1")
+        void manyOperatorsInExpression() {
+            String expression = "2++-1";
+            assertFalse(calculator.validateExpression(expression), "Expression 2++-1  contain incorrect count operators!");
+        }
+
+        @Test
+        @DisplayName("Перевірка другого символу в послідовності кількох арифметичних виразів 2+*1")
+        void inCorrectOperatorsInExpression() {
+            String expression = "2+*1";
+            assertFalse(calculator.validateExpression(expression), "Expression 2+*1  contain incorrect operators!");
+        }
     }
 
     @Nested

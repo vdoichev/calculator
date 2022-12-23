@@ -9,10 +9,13 @@ import java.util.stream.Collectors;
 
 public class Calculator {
     private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s()]";
-    private static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
-    private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
-    public static final String REGEX_WITH_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
-    public static final String REGEX_IN_BRACKETS = "[\\d+/*-.\\s]*";
+    public static final String REGEX_VALIDATE_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
+    public static final String REGEX_VALIDATE_BETWEEN_BRACKETS = "[\\d+/*-.\\s]*";
+    public static final String REGEX_VALIDATE_COUNT_OPERATORS = "[+/*-]{3,}";
+    public static final String REGEX_VALIDATE_SECOND_OPERATOR = "[+/*]{2,}";
+    private static final String REGEX_FOR_EXTRACT_NUMBERS = "[^\\d.]+";
+    private static final String REGEX_FOR_EXTRACT_OPERATORS = "[^-+/*]+";
+
     private List<String> operatorsList;
     private int countOperators = 0;
     private List<Double> numbersList;
@@ -46,6 +49,7 @@ public class Calculator {
 
     public double calculate(String expression) {
         if (validateExpression(expression)) {
+
             transformExpressionToLists(expression);
             if (numbersList.size() > 0) {
                 while (isNotSingleArgument()) {
@@ -131,7 +135,7 @@ public class Calculator {
     }
 
     private List<Double> extractNumbers(String expression) {
-        return stringListToDoubleList(correctNumbersArray(expression.split(REGEX_FOR_NUMBERS)));
+        return stringListToDoubleList(correctNumbersArray(expression.split(REGEX_FOR_EXTRACT_NUMBERS)));
     }
 
     private List<String> correctNumbersArray(String[] extractNumbers) {
@@ -142,7 +146,7 @@ public class Calculator {
     }
 
     private static List<String> extractOperators(String expression) {
-        return new ArrayList<>(Arrays.asList(expression.split(REGEX_FOR_OPERATORS)));
+        return new ArrayList<>(Arrays.asList(expression.split(REGEX_FOR_EXTRACT_OPERATORS)));
     }
 
     /**
@@ -154,16 +158,33 @@ public class Calculator {
     public boolean validateExpression(String expression) {
         Pattern pattern = Pattern.compile(REGEX_FOR_VALIDATE);
         Matcher matcher = pattern.matcher(expression);
-        return !matcher.find() && validateBrackets(expression);
+        return !matcher.find() &&
+                validateBrackets(expression) &&
+                validateCountOperators(expression) &&
+                validateSecondOperator(expression);
     }
 
     private static boolean validateBrackets(String expression) {
-        Pattern pattern = Pattern.compile(REGEX_WITH_BRACKETS);
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
         Matcher matcher = pattern.matcher(expression);
         do {
             expression = matcher.replaceAll("");
             matcher = pattern.matcher(expression);
         } while (matcher.find());
-        return expression.matches(REGEX_IN_BRACKETS);
+        return expression.matches(REGEX_VALIDATE_BETWEEN_BRACKETS);
+    }
+
+    private static boolean validateCountOperators(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_COUNT_OPERATORS);
+        Matcher matcher = pattern.matcher(expression);
+
+        return !matcher.find();
+    }
+
+    private static boolean validateSecondOperator(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_SECOND_OPERATOR);
+        Matcher matcher = pattern.matcher(expression);
+
+        return !matcher.find();
     }
 }
