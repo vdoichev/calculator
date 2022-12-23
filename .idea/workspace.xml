@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Fix branch with Arrays">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="checked the execution of all tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -71,19 +75,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.java in calculator">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
-      <module name="my-calculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vdoichev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
@@ -95,6 +86,22 @@
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
       <option name="METHOD_NAME" value="editionThreeDecimalNumbersWithSpace" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vdoichev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
+      <option name="METHOD_NAME" value="firstEditionAndSubtractNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorTest$calculateNested.subtractionAndEditionNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
         <pattern>
@@ -126,7 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$calculateNested" />
-      <option name="METHOD_NAME" value="subtractionAndEditionMultiplicationAndDivisionNumbers" />
+      <option name="METHOD_NAME" value="subtractionAndEditionNumbers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in calculator" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionAndEditionMultiplicationAndDivisionNumbers" />
-        <item itemvalue="JUnit.CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.firstEditionAndSubtractNumbers" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.subtractionAndEditionNumbers" />
         <item itemvalue="JUnit.CalculatorTest$calculateNested.multiplicationAndDivisionAndSubtractionAndEditionNegativeNumbers" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CalculatorTest$calculateNested.editionThreeDecimalNumbersWithSpace" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671564352083</updated>
       <workItem from="1671564353266" duration="38602000" />
-      <workItem from="1671693449421" duration="3230000" />
+      <workItem from="1671693449421" duration="15994000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -196,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671670578202</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix branch with Arrays">
+      <created>1671699328184</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671699328184</updated>
+    </task>
+    <task id="LOCAL-00007" summary="replace arrays to lists">
+      <created>1671700825192</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671700825192</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +231,9 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Add two operators in method operate" />
     <MESSAGE value="Fix branch with Arrays" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix branch with Arrays" />
+    <MESSAGE value="replace arrays to lists" />
+    <MESSAGE value="checked the execution of all tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="checked the execution of all tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -222,19 +245,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>118</line>
+          <line>121</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671668042540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671699304121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/calculator$All_in_calculator.ic" NAME="All in calculator Coverage Results" MODIFIED="1671608168528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

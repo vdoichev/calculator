@@ -2,6 +2,9 @@ package com.vdoichev;
 
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Тестування класу Calculator")
@@ -112,13 +115,13 @@ class CalculatorTest {
             assertEquals(6.1, result, "2.5+3.6 should be equal 6.1!");
         }
 
-//        @Test
-//        @DisplayName("Віднімання/додавання/множення/ділення чисел 30-5*2+3/1")
-//        void subtractionAndEditionMultiplicationAndDivisionNumbers() {
-//            String expression = "-30-5*2+3/1";
-//            double result = calculator.calculate(expression);
-//            assertEquals(23, result, "30-5*2+3/1 should be equal 23!");
-//        }
+        @Test
+        @DisplayName("Віднімання/додавання/множення/ділення чисел 30-5*2+3/1")
+        void subtractionAndEditionMultiplicationAndDivisionNumbers() {
+            String expression = "-30-5*2+3/1";
+            double result = calculator.calculate(expression);
+            assertEquals(-37, result, "30-5*2+3/1 should be equal -37!");
+        }
     }
 
     @Nested
@@ -160,4 +163,15 @@ class CalculatorTest {
             assertEquals(4, result, "Expression -1+2*4/2 should be contain 4 operator!");
         }
     }
+    @Test
+    @DisplayName("Пошук пріоритетного оператора")
+    void secondIndexInOperatorsList() {
+        List<String> operators = new ArrayList<>();
+        operators.add("+");
+        operators.add("*");
+        operators.add("+");
+        int result = calculator.getIndexByPriority(operators);
+        assertEquals(1, result, "Multiplication has higher priority!");
+    }
+
 }
