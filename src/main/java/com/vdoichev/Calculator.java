@@ -1,13 +1,19 @@
 package com.vdoichev;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Calculator {
-    private static final String REGEX_FOR_NUMBERS = "[^\\d.]+";
-    private static final String REGEX_FOR_OPERATORS = "[^-+/*]+";
+    private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s()]";
+    public static final String REGEX_VALIDATE_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
+    public static final String REGEX_VALIDATE_BETWEEN_BRACKETS = "[\\d+/*-.\\s]*";
+    public static final String REGEX_VALIDATE_COUNT_OPERATORS = "[+/*-]{3,}";
+    public static final String REGEX_VALIDATE_SECOND_OPERATOR = "[+/*]{2,}";
+    private static final String REGEX_FOR_EXTRACT_NUMBERS = "[^\\d.]+";
+    private static final String REGEX_FOR_EXTRACT_OPERATORS = "[^-+/*]+";
+
     private List<String> operatorsList;
     private int countOperators = 0;
     private List<Double> numbersList;
@@ -29,11 +35,71 @@ public class Calculator {
         this.countOperators = countOperators;
     }
 
-    private boolean isNotSingleArgument(){
+    private boolean isNotSingleArgument() {
         return numbersList.size() > 1;
     }
 
+    /**
+     * **************************************************
+     * методи відповідальні за разразхунок
+     * **************************************************
+     */
+
     public double calculate(String expression) {
+        if (validateExpression(expression)) {
+            if (expression.indexOf('(')!=-1) {
+                return calculateWithBrackets(expression);
+            } else {
+                return calculateWithoutBrackets(expression);
+            }
+        } else {
+            System.out.println("Вираз містить заборонені символи!");
+            return 0;
+        }
+    }
+
+    private double calculateWithBrackets(String expression) {
+        Map<String, Double> expressionMap = getMapFromExpression(expression);
+        calculateExpressionMap(expressionMap);
+
+        if (expressionMap.size()>1) {
+            expression = getExpressionFromMap(expression, expressionMap);
+            return calculateWithoutBrackets(expression);
+        }else{
+            return expressionMap.values().stream().mapToDouble(Double::doubleValue).sum();
+        }
+    }
+
+    private static String getExpressionFromMap(String expression, Map<String, Double> expressionMap) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        while (matcher.find()){
+            String expressionKey = matcher.group();
+            Double expressionValue = expressionMap.get(expressionKey);
+            expression = matcher.replaceFirst(expressionValue.toString());
+            matcher = pattern.matcher(expression);
+        }
+        return expression;
+    }
+
+    private void calculateExpressionMap(Map<String, Double> expressionMap) {
+        for (Map.Entry<String,Double> localExpressionMap: expressionMap.entrySet()) {
+            String localExpression = localExpressionMap.getKey();
+            localExpressionMap.setValue(calculateWithoutBrackets(localExpression));
+        }
+    }
+
+    private static Map<String, Double> getMapFromExpression(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        Map<String, Double> expressionMap = new HashMap<>();
+        while (matcher.find()){
+            expressionMap.put(matcher.group(), (double) 0);
+        }
+        return expressionMap;
+    }
+
+    private Double calculateWithoutBrackets(String expression) {
         transformExpressionToLists(expression);
         if (numbersList.size() > 0) {
             while (isNotSingleArgument()) {
@@ -46,12 +112,6 @@ public class Calculator {
         }
         return numbersList.get(0);
     }
-
-    /**
-     * **************************************************
-     * методи відповідальні за разразхунок
-     * **************************************************
-     */
 
     public int getIndexByPriority(List<String> operatorsList) {
         for (int i = 1; i < operatorsList.size(); i++) {
@@ -87,7 +147,7 @@ public class Calculator {
 
     /**
      * ***********************************************************
-     * методи відповідальні за перетворення виразу у масиви
+     * методи відповідальні за перетворення виразу у листи
      * ***********************************************************
      **/
     private void transformExpressionToLists(String expression) {
@@ -105,7 +165,7 @@ public class Calculator {
             if (length == 2 && operatorsList.get(i).charAt(1) == '-') {
                 replaceToNegativeNumber(numbersStringList, i, length);
             }
-            if (length == 1 && i==0 && operatorsList.get(i).charAt(0) == '-') {
+            if (length == 1 && i == 0 && operatorsList.get(i).charAt(0) == '-') {
                 replaceToNegativeNumber(numbersStringList, i, length);
             }
             doubleList.add(Double.parseDouble(numbersStringList.get(i)));
@@ -121,7 +181,7 @@ public class Calculator {
     }
 
     private List<Double> extractNumbers(String expression) {
-        return stringListToDoubleList(correctNumbersArray(expression.split(REGEX_FOR_NUMBERS)));
+        return stringListToDoubleList(correctNumbersArray(expression.split(REGEX_FOR_EXTRACT_NUMBERS)));
     }
 
     private List<String> correctNumbersArray(String[] extractNumbers) {
@@ -132,7 +192,45 @@ public class Calculator {
     }
 
     private static List<String> extractOperators(String expression) {
-        return new ArrayList<>(Arrays.asList(expression.split(REGEX_FOR_OPERATORS)));
+        return new ArrayList<>(Arrays.asList(expression.split(REGEX_FOR_EXTRACT_OPERATORS)));
     }
 
+    /**
+     * ***********************************************************
+     * методи відповідальні за валідацію виразу
+     * ***********************************************************
+     **/
+
+    public boolean validateExpression(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_FOR_VALIDATE);
+        Matcher matcher = pattern.matcher(expression);
+        return !matcher.find() &&
+                validateBrackets(expression) &&
+                validateCountOperators(expression) &&
+                validateSecondOperator(expression);
+    }
+
+    private static boolean validateBrackets(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
+        Matcher matcher = pattern.matcher(expression);
+        do {
+            expression = matcher.replaceAll("");
+            matcher = pattern.matcher(expression);
+        } while (matcher.find());
+        return expression.matches(REGEX_VALIDATE_BETWEEN_BRACKETS);
+    }
+
+    private static boolean validateCountOperators(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_COUNT_OPERATORS);
+        Matcher matcher = pattern.matcher(expression);
+
+        return !matcher.find();
+    }
+
+    private static boolean validateSecondOperator(String expression) {
+        Pattern pattern = Pattern.compile(REGEX_VALIDATE_SECOND_OPERATOR);
+        Matcher matcher = pattern.matcher(expression);
+
+        return !matcher.find();
+    }
 }
