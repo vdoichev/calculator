@@ -245,5 +245,13 @@ class CalculatorTest {
             double result = calculator.calculate(expression);
             assertEquals(2, result, "Expression (2+3)-(5-2) should be equal 2!");
         }
+
+        @Test
+        @DisplayName("Вираз зі вкладеними дужками 2*(3-(5-2))")
+        void expressionWithInnerBrackets() {
+            String expression = "2*(3-(5-2))";
+            double result = calculator.calculate(expression);
+            assertEquals(0, result, "Expression 2*(3-(5-2)) should be equal 2!");
+        }
     }
 }

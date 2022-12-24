@@ -47,56 +47,30 @@ public class Calculator {
 
     public double calculate(String expression) {
         if (validateExpression(expression)) {
-            if (expression.indexOf('(')!=-1) {
+            if (expression.indexOf('(') != -1) {
                 return calculateWithBrackets(expression);
             } else {
                 return calculateWithoutBrackets(expression);
             }
         } else {
-            System.out.println("Вираз містить заборонені символи!");
+            System.out.println("Не вірний вираз!");
             return 0;
         }
     }
 
     private double calculateWithBrackets(String expression) {
-        Map<String, Double> expressionMap = getMapFromExpression(expression);
-        calculateExpressionMap(expressionMap);
-
-        if (expressionMap.size()>1) {
-            expression = getExpressionFromMap(expression, expressionMap);
-            return calculateWithoutBrackets(expression);
-        }else{
-            return expressionMap.values().stream().mapToDouble(Double::doubleValue).sum();
-        }
-    }
-
-    private static String getExpressionFromMap(String expression, Map<String, Double> expressionMap) {
+        Double result;
         Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
-        Matcher matcher = pattern.matcher(expression);
-        while (matcher.find()){
-            String expressionKey = matcher.group();
-            Double expressionValue = expressionMap.get(expressionKey);
-            expression = matcher.replaceFirst(expressionValue.toString());
-            matcher = pattern.matcher(expression);
-        }
-        return expression;
-    }
-
-    private void calculateExpressionMap(Map<String, Double> expressionMap) {
-        for (Map.Entry<String,Double> localExpressionMap: expressionMap.entrySet()) {
-            String localExpression = localExpressionMap.getKey();
-            localExpressionMap.setValue(calculateWithoutBrackets(localExpression));
-        }
-    }
-
-    private static Map<String, Double> getMapFromExpression(String expression) {
-        Pattern pattern = Pattern.compile(REGEX_VALIDATE_BRACKETS);
-        Matcher matcher = pattern.matcher(expression);
-        Map<String, Double> expressionMap = new HashMap<>();
-        while (matcher.find()){
-            expressionMap.put(matcher.group(), (double) 0);
-        }
-        return expressionMap;
+        do {
+            Matcher matcher = pattern.matcher(expression);
+            if (matcher.find()) {
+                String localExpression = matcher.group();
+                result = calculateWithoutBrackets(localExpression);
+                expression = matcher.replaceFirst(result.toString());
+            }
+        } while ((expression.indexOf('(') != -1));
+        result = calculateWithoutBrackets(expression);
+        return result;
     }
 
     private Double calculateWithoutBrackets(String expression) {
@@ -109,8 +83,10 @@ public class Calculator {
                 numbersList.remove(i);
                 operatorsList.remove(i);
             }
+            return numbersList.get(0);
+        }else {
+            return Double.parseDouble(expression);
         }
-        return numbersList.get(0);
     }
 
     public int getIndexByPriority(List<String> operatorsList) {
@@ -152,9 +128,9 @@ public class Calculator {
      **/
     private void transformExpressionToLists(String expression) {
         operatorsList = extractOperators(expression);
-        setCountOperators(operatorsList.size());
+        setCountOperators(+operatorsList.size());
         numbersList = extractNumbers(expression);
-        setCountNumbers(numbersList.size());
+        setCountNumbers(+numbersList.size());
     }
 
     private List<Double> stringListToDoubleList(List<String> numbersStringList) {
