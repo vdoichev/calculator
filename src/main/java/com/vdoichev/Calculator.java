@@ -7,16 +7,17 @@ import java.util.stream.Collectors;
 
 public class Calculator {
     private static final String REGEX_FOR_VALIDATE = "[^\\d.\\-+/*\\s()]";
-    public static final String REGEX_VALIDATE_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
-    public static final String REGEX_VALIDATE_BETWEEN_BRACKETS = "[\\d+/*-.\\s]*";
-    public static final String REGEX_VALIDATE_COUNT_OPERATORS = "[+/*-]{3,}";
-    public static final String REGEX_VALIDATE_SECOND_OPERATOR = "[+/*]{2,}";
+    private static final String REGEX_VALIDATE_BRACKETS = "\\([\\d+/*-.\\s]*\\)";
+    private static final String REGEX_VALIDATE_BETWEEN_BRACKETS = "[\\d+/*-.\\s]*";
+    private static final String REGEX_VALIDATE_COUNT_OPERATORS = "[+/*-]{3,}";
+    private static final String REGEX_VALIDATE_SECOND_OPERATOR = "[+/*]{2,}";
     private static final String REGEX_FOR_EXTRACT_NUMBERS = "[^\\d.]+";
     private static final String REGEX_FOR_EXTRACT_OPERATORS = "[^-+/*]+";
 
     private List<String> operatorsList;
-    private int countOperators = 0;
+    private int countOperatorsInList = 0;
     private List<Double> numbersList;
+    private int countNumbersInList = 0;
     private int countNumbers = 0;
 
     public int getCountNumbers() {
@@ -27,12 +28,25 @@ public class Calculator {
         this.countNumbers = countNumbers;
     }
 
-    public int getCountOperators() {
-        return countOperators;
+    public int getCountNumbersInList() {
+        return countNumbersInList;
     }
 
-    public void setCountOperators(int countOperators) {
-        this.countOperators = countOperators;
+    public void setCountNumbersInList(int countNumbersInList) {
+        this.countNumbersInList = countNumbersInList;
+        if (getCountNumbers() > 0) {
+            setCountNumbers(getCountNumbers() - 1 + getCountNumbersInList());
+        } else {
+            setCountNumbers(getCountNumbersInList());
+        }
+    }
+
+    public int getCountOperatorsInList() {
+        return countOperatorsInList;
+    }
+
+    public void setCountOperatorsInList(int countOperatorsInList) {
+        this.countOperatorsInList = countOperatorsInList;
     }
 
     private boolean isNotSingleArgument() {
@@ -84,7 +98,7 @@ public class Calculator {
                 operatorsList.remove(i);
             }
             return numbersList.get(0);
-        }else {
+        } else {
             return Double.parseDouble(expression);
         }
     }
@@ -128,9 +142,9 @@ public class Calculator {
      **/
     private void transformExpressionToLists(String expression) {
         operatorsList = extractOperators(expression);
-        setCountOperators(+operatorsList.size());
+        setCountOperatorsInList(operatorsList.size());
         numbersList = extractNumbers(expression);
-        setCountNumbers(+numbersList.size());
+        setCountNumbersInList(numbersList.size());
     }
 
     private List<Double> stringListToDoubleList(List<String> numbersStringList) {

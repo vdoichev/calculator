@@ -8,12 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
     private final Calculator calculator = new Calculator();
 
-    @BeforeEach
-    void setUp() {
-    }
-
     @Nested
-
     @DisplayName("Тестування методу calculate")
     class calculateNested {
         @Test()
@@ -119,6 +114,15 @@ class CalculatorTest {
             double result = calculator.calculate(expression);
             assertEquals(-37, result, "30-5*2+3/1 should be equal 23!");
         }
+
+        @Test
+        @DisplayName("Кількість чисел у простому виразу 2+3-5")
+        void countNumbersInSimpleExpression() {
+            String expression = "2+3-5";
+            calculator.calculate(expression);
+            double count = calculator.getCountNumbers();
+            assertEquals(3, count, "2+3-5 should be contain 3 numbers!");
+        }
     }
 
     @Nested
@@ -129,7 +133,7 @@ class CalculatorTest {
         void countTwoNumbersInExpression() {
             String expression = "1+2";
             calculator.calculate(expression);
-            double result = calculator.getCountNumbers();
+            double result = calculator.getCountNumbersInList();
             assertEquals(2, result, "Expression 1+2 should be contain 2 numbers!");
         }
 
@@ -138,7 +142,7 @@ class CalculatorTest {
         void countThreeNumbersInExpression() {
             String expression = "1+2+3";
             calculator.calculate(expression);
-            double result = calculator.getCountNumbers();
+            double result = calculator.getCountNumbersInList();
             assertEquals(3, result, "Expression 1+2+3 should be contain 3 numbers!");
         }
 
@@ -147,7 +151,7 @@ class CalculatorTest {
         void countOneOperatorInExpression() {
             String expression = "1+2";
             calculator.calculate(expression);
-            int result = calculator.getCountOperators();
+            int result = calculator.getCountOperatorsInList();
             assertEquals(2, result, "Expression 1+2 should be contain 2 operator!");
         }
 
@@ -156,10 +160,11 @@ class CalculatorTest {
         void countManyOperatorsInExpression() {
             String expression = "-1+2*4/2";
             calculator.calculate(expression);
-            int result = calculator.getCountOperators();
+            int result = calculator.getCountOperatorsInList();
             assertEquals(4, result, "Expression -1+2*4/2 should be contain 4 operator!");
         }
     }
+
     @Nested
     @DisplayName("Тестування валідації виразу")
     class validateNumbersAndValidate {
@@ -252,6 +257,32 @@ class CalculatorTest {
             String expression = "2*(3-(5-2))";
             double result = calculator.calculate(expression);
             assertEquals(0, result, "Expression 2*(3-(5-2)) should be equal 2!");
+        }
+
+        @Test
+        @DisplayName("Вираз із кількома вкладеними дужками 2+(5-2+(6+3))*(4*2-(6-4))")
+        void expressionWithManyInnerBrackets() {
+            String expression = "2+(5-2+(6+3))*(4*2-(6-4))";
+            double result = calculator.calculate(expression);
+            assertEquals(74, result, "Expression 2+(5-2+(6+3))*(4*2-(6-4)) should be equal 70!");
+        }
+
+        @Test
+        @DisplayName("Кількість чисел у виразі зі скобками 2+(3-5)")
+        void countNumbersWithBracketsExpression() {
+            String expression = "2+(3-5)";
+            calculator.calculate(expression);
+            double count = calculator.getCountNumbers();
+            assertEquals(3, count, "2+(3-5) should be contain 3 numbers!");
+        }
+
+        @Test
+        @DisplayName("Кількість чисел у виразі зі вкладеними скобками 2+(3-5)*(4*2-(6+4))")
+        void countNumbersWithInnerBracketsExpression() {
+            String expression = "2+(3-5)*(4*2-(6+4))";
+            calculator.calculate(expression);
+            double count = calculator.getCountNumbers();
+            assertEquals(7, count, "2+(3-5)*(4*2-(6+4)) should be contain 7 numbers!");
         }
     }
 }
