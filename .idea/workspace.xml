@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add tests for countNumbers">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/DBCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/MySQLConnection.java" afterDir="false" />
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add connection to MySql and add dialog with user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/DBCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/DBCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,29 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last.edited.regexp": "Sample Text",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last.edited.regexp&quot;: &quot;Sample Text&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -89,7 +84,7 @@
       <recent name="com.vdoichev.db" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.java in calculator">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
       <module name="my-calculator" />
@@ -161,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.java in calculator" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.countNumbersWithBracketsExpression" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.expressionWithManyInnerBrackets" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.countNumbersWithInnerBracketsExpression" />
@@ -180,7 +175,8 @@
       <workItem from="1671564353266" duration="38602000" />
       <workItem from="1671693449421" duration="15994000" />
       <workItem from="1671883565307" duration="3430000" />
-      <workItem from="1671899351983" duration="9237000" />
+      <workItem from="1671899351983" duration="9489000" />
+      <workItem from="1671912190139" duration="1456000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -245,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671886688097</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add connection to MySql and add dialog with user">
+      <created>1671910657331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671910657331</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +266,8 @@
     <MESSAGE value="checked the execution of all tests" />
     <MESSAGE value="add Test subtractionAndEditionMultiplicationAndDivisionNumbers" />
     <MESSAGE value="Add tests for countNumbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests for countNumbers" />
+    <MESSAGE value="Add connection to MySql and add dialog with user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add connection to MySql and add dialog with user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,7 +7,9 @@ public class DBCalculator {
 
     private static final String SELECT_FROM_EXPRESSIONS = "SELECT * FROM expressions";
     private static final String SELECT_FROM_EXPRESSIONS_BY_ID = "SELECT * FROM expressions where id = ?";
-    private static final String SELECT_FROM_EXPRESSIONS_BY_RESULT = "SELECT * FROM expressions where result = ?";
+    private static final String SELECT_FROM_EXPRESSIONS_BY_RESULT_EQUAL = "SELECT * FROM expressions where result = ?";
+    private static final String SELECT_FROM_EXPRESSIONS_BY_RESULT_MORE = "SELECT * FROM expressions where result > ?";
+    private static final String SELECT_FROM_EXPRESSIONS_BY_RESULT_LESS = "SELECT * FROM expressions where result < ?";
     public static final String INSERT_INTO_EXPRESSIONS = "INSERT INTO expressions(expression, result) values (?, ?)";
     public static final String UPDATE_EXPRESSIONS = "UPDATE expressions SET expression = ?, result = ? WHERE ID =?";
 
@@ -47,11 +49,12 @@ public class DBCalculator {
         return false;
     }
 
-    public boolean findByResult(String condition) {
-        try (Connection con = MySQLConnection.getConnection();
-             PreparedStatement statement = Objects.requireNonNull(con).prepareStatement(
-                     SELECT_FROM_EXPRESSIONS_BY_RESULT)) {
-            statement.setString(1, condition);
+    public boolean findByResult(String condition, String value) {
+        try (Connection con = MySQLConnection.getConnection()) {
+            String sql = switchSql(condition);
+            if (sql == null) return false;
+            PreparedStatement statement = Objects.requireNonNull(con).prepareStatement(sql);
+            statement.setString(1, value);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String output = String.format("ID = %s  EXPRESSOIN = %s  RESULT = %s",
@@ -65,6 +68,27 @@ public class DBCalculator {
             ex.printStackTrace();
         }
         return false;
+    }
+
+    private static String switchSql(String condition) {
+        String sql;
+        switch (condition){
+            case "=":{
+                sql = SELECT_FROM_EXPRESSIONS_BY_RESULT_EQUAL;
+                break;
+            }
+            case "<":{
+                sql = SELECT_FROM_EXPRESSIONS_BY_RESULT_LESS;
+                break;
+            }
+            case ">":{
+                sql = SELECT_FROM_EXPRESSIONS_BY_RESULT_MORE;
+                break;
+            }
+            default:
+                return null;
+        }
+        return sql;
     }
 
     public int addExpression(String expression, double result) {

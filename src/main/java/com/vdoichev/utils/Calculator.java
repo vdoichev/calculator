@@ -67,7 +67,7 @@ public class Calculator {
                 return calculateWithoutBrackets(expression);
             }
         } else {
-            System.out.println("Не вірний вираз!");
+            System.out.println("Incorrect expression!");
             return 0;
         }
     }

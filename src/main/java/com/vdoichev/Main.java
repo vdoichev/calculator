@@ -98,18 +98,21 @@ public class Main {
         } else {
             System.out.println("Expression by id not found!");
         }
-
     }
 
     private static void findByResult() {
-        System.out.println("Input condition (example: >10):");
+        System.out.println("Input condition (example: > or < or =):");
         String condition = scanner.nextLine();
-        if (dbCalculator.findByResult(condition)) {
-            System.out.println("Search completed!");
+        if (condition.equals("=") || condition.equals(">") || condition.equals("<")) {
+            System.out.println("Input value:");
+            String value = scanner.nextLine();
+            if (dbCalculator.findByResult(condition, value)) {
+                System.out.println("Search completed!");
+            } else {
+                System.out.println("Expression by condition not found!");
+            }
         } else {
-            System.out.println("Expression by condition not found!");
+            System.out.println("Condition is not correct!");
         }
-
     }
-
 }
