@@ -1,4 +1,4 @@
-package com.vdoichev;
+package com.vdoichev.utils;
 
 import java.util.*;
 import java.util.regex.Matcher;

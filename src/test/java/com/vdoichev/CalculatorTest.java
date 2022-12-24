@@ -1,5 +1,6 @@
 package com.vdoichev;
 
+import com.vdoichev.utils.Calculator;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
