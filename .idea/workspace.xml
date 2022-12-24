@@ -104,6 +104,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculatorTest$expressionWithBrackets.expressionWithInnerBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vdoichev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$expressionWithBrackets" />
+      <option name="METHOD_NAME" value="expressionWithInnerBrackets" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculatorTest$expressionWithBrackets.expressionWithTwoBrackets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <extension name="coverage">
@@ -120,22 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorTest$validateNumbersAndValidate.inCorrectOperatorsInExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="my-calculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vdoichev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vdoichev.CalculatorTest" />
-      <option name="MAIN_CLASS_NAME" value="com.vdoichev.CalculatorTest$validateNumbersAndValidate" />
-      <option name="METHOD_NAME" value="inCorrectOperatorsInExpression" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in calculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-calculator" />
       <option name="TEST_OBJECT" value="directory" />
@@ -147,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in calculator" />
-        <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.editionTwoNumbersWithBrackets" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.expressionWithTwoBrackets" />
+        <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.expressionWithInnerBrackets" />
+        <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.editionTwoNumbersWithBrackets" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CalculatorTest$validateNumbersAndValidate.inCorrectOperatorsInExpression" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +165,8 @@
       <workItem from="1671564353266" duration="38602000" />
       <workItem from="1671693449421" duration="15994000" />
       <workItem from="1671793249550" duration="3426000" />
-      <workItem from="1671812261757" duration="6742000" />
+      <workItem from="1671812261757" duration="6769000" />
+      <workItem from="1671861664865" duration="4291000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -244,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671796774980</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add methods calculate expression with brackets">
+      <created>1671821443215</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671821443215</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,19 +315,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>244</line>
-          <option name="timeStamp" value="27" />
+          <line>252</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
           <line>236</line>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/Calculator.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671821293425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671861683463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/calculator$All_in_calculator.ic" NAME="All in calculator Coverage Results" MODIFIED="1671608168528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
