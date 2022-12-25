@@ -59,7 +59,7 @@ public class Calculator {
      * **************************************************
      */
 
-    public double calculate(String expression) {
+    public Double calculate(String expression) {
         if (validateExpression(expression)) {
             if (expression.indexOf('(') != -1) {
                 return calculateWithBrackets(expression);
@@ -68,7 +68,7 @@ public class Calculator {
             }
         } else {
             System.out.println("Incorrect expression!");
-            return 0;
+            return null;
         }
     }
 

@@ -78,9 +78,11 @@ public class Main {
     private static void calculateNewExpression() {
         System.out.println("Input expression:");
         String expression = scanner.nextLine();
-        double result = calculator.calculate(expression);
-        int id = dbCalculator.addExpression(expression, result);
-        printResult(expression, result, id, calculator.getCountNumbersInList());
+        Double result = calculator.calculate(expression);
+        if (result!=null) {
+            int id = dbCalculator.addExpression(expression, result);
+            printResult(expression, result, id, calculator.getCountNumbersInList());
+        }
     }
 
     private static void updateExpression() {

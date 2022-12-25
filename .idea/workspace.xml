@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Add connection to MySql and add dialog with user">
+    <list default="true" id="10684ed4-3d29-463d-b4b9-52d0fbbb0ddd" name="Changes" comment="Refactoring and add script DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/DBCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/db/DBCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="connect_jdbc" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,7 +83,7 @@
       <recent name="com.vdoichev.db" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in calculator">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.vdoichev.Main" />
       <module name="my-calculator" />
@@ -156,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in calculator" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in calculator" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.countNumbersWithBracketsExpression" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.expressionWithManyInnerBrackets" />
         <item itemvalue="JUnit.CalculatorTest$expressionWithBrackets.countNumbersWithInnerBracketsExpression" />
@@ -177,6 +176,7 @@
       <workItem from="1671883565307" duration="3430000" />
       <workItem from="1671899351983" duration="9489000" />
       <workItem from="1671912190139" duration="1456000" />
+      <workItem from="1671963623022" duration="834000" />
     </task>
     <task id="LOCAL-00001" summary="Add methods extractOperators and operate">
       <created>1671607555503</created>
@@ -268,27 +268,6 @@
     <MESSAGE value="Add tests for countNumbers" />
     <MESSAGE value="Add connection to MySql and add dialog with user" />
     <option name="LAST_COMMIT_MESSAGE" value="Add connection to MySql and add dialog with user" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/vdoichev/CalculatorTest.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/vdoichev/utils/Calculator.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/calculator$java_in_calculator.ic" NAME="java in calculator Coverage Results" MODIFIED="1671861683463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
